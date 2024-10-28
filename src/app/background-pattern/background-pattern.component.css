@@ -1,0 +1,31 @@
+.svg {
+    background-color: black;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+/* Individual svg images */
+.hamster {
+    mask-size: 70%;
+}
+
+.hond_groot {
+    mask-size: 90%;
+}
+
+.hond_klein {
+    mask-size: 80%;
+    
+}
+
+.kat {
+    mask-size: 70%;
+}
+
+.kip {
+    mask-size: 40%;
+}
+
+.konijn {
+    mask-size: 70%;
+}

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Adds the Tailwind directives to CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-with-outline {
+  position: relative;
+  font-family: "Titan One";
+  font-size: 32px;
+  color: black;
+}
+
+.text-with-outline::after {
+  content: attr(data-text-outline);
+  z-index: -1;
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  color: transparent;
+  -webkit-text-stroke: 2px red;
+}
