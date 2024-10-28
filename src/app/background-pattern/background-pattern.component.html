@@ -6,6 +6,7 @@
   >
     <div class="flex flex-row gap-1" *ngFor="let row of rows">
       <div
+        #tile
         *ngFor="let tile of row"
         class="svg {{ tile.class }}"
         [ngStyle]="{

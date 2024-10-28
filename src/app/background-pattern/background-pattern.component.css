@@ -1,31 +1,59 @@
 .svg {
-    background-color: black;
-    mask-repeat: no-repeat;
-    mask-position: center;
+  background-color: black;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(365deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  background-color: red;
+  animation: rotate 1.5s ease-in-out;
 }
 
 /* Individual svg images */
 .hamster {
-    mask-size: 70%;
+  mask-size: 70%;
 }
 
 .hond_groot {
-    mask-size: 90%;
+  mask-size: 90%;
 }
 
 .hond_klein {
-    mask-size: 80%;
-    
+  mask-size: 80%;
 }
 
 .kat {
-    mask-size: 70%;
+  mask-size: 70%;
 }
 
 .kip {
-    mask-size: 40%;
+  mask-size: 40%;
 }
 
 .konijn {
-    mask-size: 70%;
+  mask-size: 70%;
 }

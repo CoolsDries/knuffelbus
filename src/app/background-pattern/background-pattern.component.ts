@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, Renderer2, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-background-pattern',
@@ -22,16 +22,55 @@ export class BackgroundPatternComponent {
 
   containerWidth: number = 0;
   containerHeight: number = 0;
-  
+
+  @ViewChildren('tile') tileElements!: QueryList<ElementRef>;
+  tileArray: HTMLElement[] = [];
+  private animationInterval: any;
+
+  constructor(private renderer: Renderer2) {
+
+  }
+
   ngOnInit(): void {
     this.calculateDimensions();
+  }
+
+  ngAfterViewInit(): void {
     this.generatePattern();
+    this.tileElements.changes.subscribe(c => {
+      this.startAnimationInterval(c.map((t: any) => t.nativeElement));
+    });
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.animationInterval);
   }
 
   @HostListener('window:resize')
   onResize() {
     this.calculateDimensions();
     this.generatePattern();
+  }
+
+  startAnimationInterval(tileArray: HTMLElement[]) {
+    const length = tileArray.length;
+
+    this.animationInterval = setInterval(() => {
+      const index = Math.floor(Math.random() * length)
+      let tile = tileArray[index];
+
+      if (tile) {
+        // Reset de actieve animatie-index en kies een nieuwe willekeurige SVG
+        this.renderer.addClass(tile, "animate-rotate");
+        // Verwijder de animatie na een korte duur
+        setTimeout(() => {
+          this.renderer.removeClass(tile, "animate-rotate");
+        }, 2000); // Animatieduur van 1.5 seconden
+      }
+
+    }, 3000); // Interval van 5 seconden
+
+
   }
 
   // renews dimensions
@@ -64,13 +103,6 @@ export class BackgroundPatternComponent {
       // assign copy
       this.rows[i] = [...row];
     }
-
-    console.log(this.containerHeight)
-    console.log(this.containerWidth)
-    console.log(this.tileSize)
-    console.log(tilesPerRow)
-    console.log(rowCount)
-    console.log(this.rows)
 
   }
 
