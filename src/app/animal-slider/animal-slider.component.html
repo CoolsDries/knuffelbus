@@ -1,0 +1,8 @@
+<div class="flex flex-row justify-center">
+    <button (click)="previous()" class="text-3xl">&#10229;</button>
+    
+    <app-animal-slider-item class="w-1/2 mx-10"
+    *ngIf="animals.length" [animal]="animals[currentIndex]"></app-animal-slider-item>
+    
+    <button (click)="next()" class="text-3xl">&#10230;</button>
+  </div>
