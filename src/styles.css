@@ -7,11 +7,10 @@
 
 .text-with-outline {
   /* Add margin same size as offset of outline */
-  -webkit-text-stroke: white;
-  @apply relative font-titel text-5xl text-blue ml-0.5 mb-0.5;
+  @apply relative font-titel p-0.5;
 }
 
 .text-with-outline::after {
   -webkit-text-stroke: 1px white;
-  @apply content-[attr(data-text-outline)] -z-10 absolute bottom-0.5 left-0.5 text-transparent;
+  @apply content-[attr(data-text-outline)] -z-10 absolute bottom-1 left-1 text-transparent;
 }

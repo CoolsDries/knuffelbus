@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['ui-sans-serif', 'system-ui'],
+        'sans': ['nunito', 'ui-sans-serif', 'system-ui'],
         'serif': ['ui-serif', 'Georgia'],
         'mono': ['ui-monospace', 'SFMono-Regular'],
-        'titel': ['titan one'],
+        'titel': ['bowlby one'],
       },
       colors: {
         'yellow': '#E7E19E',
