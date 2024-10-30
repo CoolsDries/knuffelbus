@@ -1,7 +1,6 @@
 .svg {
   mask-repeat: no-repeat;
   mask-position: center;
-  @apply bg-orange-dark
 }
 
 @keyframes rotate {

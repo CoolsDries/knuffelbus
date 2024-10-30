@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, QueryList, Renderer2, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-background-pattern',
@@ -9,6 +9,9 @@ import { Component, ElementRef, HostListener, QueryList, Renderer2, ViewChildren
   styleUrl: './background-pattern.component.css'
 })
 export class BackgroundPatternComponent {
+  @Input() colorPrimary: string = "#F9A65F";
+  @Input() colorSecondary: string = "#F26A48";
+
   // list of all images in background
   backgroundImages = [
     { src: 'lineart/konijn.svg', class: 'konijn' },

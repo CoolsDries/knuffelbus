@@ -1,0 +1,16 @@
+
+<nav>
+  <div class="flex flex-row justify-between content-center px-3 py-3 fixed top-0">
+    <button class="hamburger" [matMenuTriggerFor]="menu">&equiv;</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="scrollToSection('test')">Home</button>
+        <button mat-menu-item>Bottom</button>
+    </mat-menu>
+    <img
+      class="w-1/4 mr-3"
+      src="/logo.svg"
+      routerLink="/"
+      alt="knuffelbus logo"
+    />
+  </div>
+</nav>

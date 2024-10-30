@@ -3,7 +3,7 @@
   <!-- background image -->
   <div
     class="flex flex-col gap-1 w-100 h-100 absolute -z-10 
-    -right-[{{tileSize/2}}px] -left-[{{tileSize/2}}px] -top-[{{tileSize/2}}px]   bg-orange"
+    -right-[{{tileSize/2}}px] -left-[{{tileSize/2}}px] -top-[{{tileSize/2}}px] bg-orange"
   >
     <div class="flex flex-row gap-1" *ngFor="let row of rows">
       <div
@@ -13,7 +13,8 @@
         [ngStyle]="{
           width: tileSize + 'px',
           height: tileSize + 'px',
-          'mask-image': 'url(' + tile.src + ')'
+          'mask-image': 'url(' + tile.src + ')',
+          'background-color': colorSecondary
         }"
       ></div>
     </div>

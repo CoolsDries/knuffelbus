@@ -14,3 +14,6 @@
   -webkit-text-stroke: 1px white;
   @apply content-[attr(data-text-outline)] -z-10 absolute bottom-1 left-1 text-transparent;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
