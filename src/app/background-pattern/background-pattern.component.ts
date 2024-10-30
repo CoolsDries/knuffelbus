@@ -9,6 +9,7 @@ import { Component, ElementRef, HostListener, QueryList, Renderer2, ViewChildren
   styleUrl: './background-pattern.component.css'
 })
 export class BackgroundPatternComponent {
+  // list of all images in background
   backgroundImages = [
     { src: 'lineart/konijn.svg', class: 'konijn' },
     { src: 'lineart/hond_groot.svg', class: 'hond_groot' },
@@ -17,27 +18,36 @@ export class BackgroundPatternComponent {
     { src: 'lineart/hond_klein.svg', class: 'hond_klein' },
     { src: 'lineart/hamster.svg', class: 'hamster' },
   ];
+  
+  // height and width of images
   tileSize: number = 0;
+
+  // matrix that holds the images
   rows: any[] = [];
 
+  // width and height of the container that needs a background
   containerWidth: number = 0;
   containerHeight: number = 0;
 
+  // query to fetch all the elements with tile tag
   @ViewChildren('tile') tileElements!: QueryList<ElementRef>;
+  // array that will hold query results
   tileArray: HTMLElement[] = [];
+  // property to start and stop animations
   private animationInterval: any;
 
-  constructor(private renderer: Renderer2) {
-
-  }
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.calculateDimensions();
+    this.generatePattern();
   }
 
   ngAfterViewInit(): void {
-    this.generatePattern();
+    // Subscribe to query and map to HTML element so changes can be made
     this.tileElements.changes.subscribe(c => {
+      clearInterval(this.animationInterval);
+      // Start animation interval with new elements
       this.startAnimationInterval(c.map((t: any) => t.nativeElement));
     });
   }
@@ -48,27 +58,31 @@ export class BackgroundPatternComponent {
 
   @HostListener('window:resize')
   onResize() {
+    // recalculate and regenerate on window resize
     this.calculateDimensions();
     this.generatePattern();
   }
 
+  // Start animations with given HTML elements
   startAnimationInterval(tileArray: HTMLElement[]) {
     const length = tileArray.length;
 
     this.animationInterval = setInterval(() => {
+      // random index from array
       const index = Math.floor(Math.random() * length)
       let tile = tileArray[index];
 
       if (tile) {
-        // Reset de actieve animatie-index en kies een nieuwe willekeurige SVG
+        // give element animation css class
         this.renderer.addClass(tile, "animate-rotate");
-        // Verwijder de animatie na een korte duur
+
         setTimeout(() => {
+          // remove given class
           this.renderer.removeClass(tile, "animate-rotate");
-        }, 2000); // Animatieduur van 1.5 seconden
+        }, 2000); // animation duration
       }
 
-    }, 3000); // Interval van 5 seconden
+    }, 3000); // interval time
 
 
   }
@@ -81,13 +95,16 @@ export class BackgroundPatternComponent {
       const container = myElement.getBoundingClientRect();
       this.containerWidth = container.width;
       this.containerHeight = container.height;
+      // TODO: add calculation to define tile size
       this.tileSize = 50;
     }
 
   }
 
   private generatePattern(): void {
+    // Tiles needed for 1 row + 1 extra due to shift
     const tilesPerRow = Math.ceil(this.containerWidth / this.tileSize) + 1;
+    // rows needed to file container
     const rowCount = Math.ceil(this.containerHeight / this.tileSize);
 
     // Fill first row with images
@@ -110,9 +127,5 @@ export class BackgroundPatternComponent {
     for (let i = 0; i < amount; i++) {
       array.push(array.shift());
     };
-  }
-
-  getTileSizeHalf() {
-    return this.tileSize / 2;
   }
 }

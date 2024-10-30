@@ -1,7 +1,7 @@
 .svg {
-  background-color: black;
   mask-repeat: no-repeat;
   mask-position: center;
+  @apply bg-orange-dark
 }
 
 @keyframes rotate {
@@ -29,8 +29,8 @@
 }
 
 .animate-rotate {
-  background-color: red;
   animation: rotate 1.5s ease-in-out;
+  @apply bg-blue
 }
 
 /* Individual svg images */
@@ -51,7 +51,7 @@
 }
 
 .kip {
-  mask-size: 40%;
+  mask-size: 35%;
 }
 
 .konijn {
