@@ -1,0 +1,16 @@
+.listItem {
+    @apply text-center font-titel text-orange-dark;
+}
+
+.overlay {
+    @apply flex justify-center items-center bg-yellow w-full h-screen 
+}
+
+.overlay-image {
+    mask-image: url(/lineart/logo_background.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 150%;
+    transform: rotate(90deg);
+    @apply bg-orange opacity-30 absolute w-[100vh] h-[100vw] overflow-visible
+}
