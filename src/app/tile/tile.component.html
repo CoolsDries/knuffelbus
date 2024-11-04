@@ -1,8 +1,12 @@
 <div
-  class="bg-orange rounded-lg shadow-lg p-6 text-center border border-orange-200"
+  class="relative overflow-hidden bg-orange rounded-md shadow-lg border border-orange-dark border-opacity-20 p-6 text-center"
 >
   <!-- background image -->
-  <div class="image"></div>
+  <div class="absolute -bottom-10 -right-10 w-[60vw] h-[60vw]">
+    <svg class="text-orange-dark -rotate-45 opacity-30 w-full h-full">
+      <use xlink:href="lineart/hamster.svg#Layer_2" />
+    </svg>
+  </div>
   <!-- content  -->
   <ng-content></ng-content>
 </div>

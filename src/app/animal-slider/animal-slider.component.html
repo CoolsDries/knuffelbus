@@ -1,8 +1,6 @@
-<div class="flex flex-col items-center my-5">
-  <h1 class="font-titel text-red text-xl mx-5 w-fit">Onze knuffelaars</h1>
-
+<div class="flex flex-col items-center">
   <div class="flex flex-row justify-center w-screen">
-    <button (click)="previous()" class="text-3xl text-orange-dark">
+    <button (click)="previous()" class="text-2xl text-orange-dark">
       &#10229;
     </button>
 
@@ -12,6 +10,6 @@
       [animal]="animals[currentIndex]"
     ></app-animal-slider-item>
 
-    <button (click)="next()" class="text-3xl text-orange-dark">&#10230;</button>
+    <button (click)="next()" class="text-2xl text-orange-dark">&#10230;</button>
   </div>
 </div>

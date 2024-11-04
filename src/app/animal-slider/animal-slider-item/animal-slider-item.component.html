@@ -1,8 +1,11 @@
 <div class="flex flex-col items-center text-center">
-    <img [src]="animal.image" alt="{{ animal.name }}" 
-    class="w-3/4">
-    <h1 class="text-with-outline text-red text-2xl mb-2" 
-    [attr.data-text-outline]="animal.name">{{ animal.name }}</h1>
-    <p class="font-medium text-orange-dark">Leeftijd: {{ animal.age }} jaar</p>
-    <p class="font-medium text-orange-dark leading-4">{{ animal.description }}</p>
-  </div>
+  <img [src]="animal.image" alt="{{ animal.name }}" />
+
+  <h1
+    class="text-with-outline text-red text-2xl mb-2"
+    [attr.data-text-outline]="animal.name"
+  >
+    {{ animal.name }}
+  </h1>
+  <p class="font-medium text-orange-dark leading-4">{{ animal.description }}</p>
+</div>

@@ -5,6 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.section-title {
+  @apply font-titel text-xl mb-6 mt-6
+}
+
+p {
+  @apply font-sans text-sm leading-4
+}
+
 .text-with-outline {
   /* Add margin same size as offset of outline */
   @apply relative font-titel p-0.5;
@@ -15,9 +23,6 @@
   @apply content-[attr(data-text-outline)] -z-10 absolute bottom-1 left-1 text-transparent;
 }
 
-.textwithheader {
-  @apply px-5 py-7;
+.container-titel-text {
+  @apply px-5 py-6;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

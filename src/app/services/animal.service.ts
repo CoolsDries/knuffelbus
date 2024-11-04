@@ -10,13 +10,13 @@ export class AnimalService {
     {
       name: 'Kleine Hond',
       age: 2,
-      description: 'Een kleine hond vol energie en altijd klaar voor knuffels!',
+      description: 'Een kleine hond vol energie en altijd klaar voor knuffels en likjes!',
       image: '/real_images/hond_klein.png'
     },
     {
       name: 'Kip',
       age: 1,
-      description: 'Een nieuwsgierige kip die graag in de tuin rondscharrelt. Ze is lief en makkelijk te benaderen.',
+      description: 'Een nieuwsgierige kip die lief en makkelijk te benaderen is. En ze is zachter dan je denkt!',
       image: '/real_images/kip.png'
     },
     {

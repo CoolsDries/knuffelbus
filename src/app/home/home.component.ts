@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { BackgroundPatternComponent } from '../background-pattern/background-pattern.component';
 import { AnimalSliderComponent } from '../animal-slider/animal-slider.component';
+import { TileComponent } from '../tile/tile.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, BackgroundPatternComponent, AnimalSliderComponent],
+  imports: [CommonModule, BackgroundPatternComponent, AnimalSliderComponent, TileComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
