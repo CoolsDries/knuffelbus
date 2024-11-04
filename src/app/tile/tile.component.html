@@ -2,11 +2,23 @@
   class="relative overflow-hidden bg-orange rounded-md shadow-lg border border-orange-dark border-opacity-20 p-6 text-center"
 >
   <!-- background image -->
-  <div class="absolute -bottom-10 -right-10 w-[60vw] h-[60vw]">
+  <div
+    *ngIf="side; else left"
+    class="absolute -bottom-10 -right-10 w-[60vw] h-[60vw]"
+  >
     <svg class="text-orange-dark -rotate-45 opacity-30 w-full h-full">
-      <use xlink:href="lineart/hamster.svg#Layer_2" />
+      <use [attr.xlink:href]="image" />
     </svg>
   </div>
+
+  <ng-template #left>
+    <div class="absolute -bottom-10 -left-10 w-[60vw] h-[60vw]">
+      <svg class="text-orange-dark rotate-45 opacity-30 w-full h-full">
+        <use [attr.xlink:href]="image" />
+      </svg>
+    </div>
+  </ng-template>
+
   <!-- content  -->
   <ng-content></ng-content>
 </div>

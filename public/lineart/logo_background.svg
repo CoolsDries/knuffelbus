@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 661.44 472.24">
+<svg id="id" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 661.44 472.24">
   <defs>
     <style>
       .cls-1 {
@@ -7,11 +7,11 @@
       }
 
       .cls-1, .cls-2, .cls-3 {
-        fill: #f9a65f;
+        fill: currentColor;
       }
 
       .cls-1, .cls-3 {
-        stroke: #f9a65f;
+        stroke: currentColor;
         stroke-linecap: round;
         stroke-miterlimit: 10;
       }
