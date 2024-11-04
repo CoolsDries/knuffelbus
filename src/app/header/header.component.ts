@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,37 +10,22 @@ import { Component, Renderer2 } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  overlayOpen = false;
+  isNavigationRoute: boolean = false;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private router: Router) { }
 
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  ngOnInit(): void {
+    // Listen to router changes
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Check if header is on the menu page
+        this.isNavigationRoute = event.urlAfterRedirects === '/nav';
+      }
+    });
   }
 
-  toggleOverlay() {
-    console.log("print")
-    this.overlayOpen = !this.overlayOpen;
-    if (this.overlayOpen) {
-      this.renderer.addClass(document.body, 'no-scroll');
-    } else {
-      this.renderer.removeClass(document.body, 'no-scroll');
-    }
+  openNavigation() {
+      this.router.navigate(['/nav']);
   }
 
-  closeOverlay() {
-    this.overlayOpen = false;
-    this.renderer.removeClass(document.body, 'no-scroll');
-  }
-
-  navigateTo(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    this.closeOverlay();
-  }
 }

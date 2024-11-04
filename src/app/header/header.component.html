@@ -1,27 +1,15 @@
-<div class="z-50 bg-transparent flex flex-row px-3 py-3 fixed top-0">
+<div class="z-50 bg-transparent flex flex-row px-3 py-3 fixed top-0 w-full">
   <button
-    (click)="toggleOverlay()"
+    (click)="openNavigation()"
     class="w-1/6 font-medium text-4xl text-blue"
   >
-    {{ overlayOpen ? "x" : "&equiv;" }}
+  {{ isNavigationRoute ? "x" : "&equiv;" }}
   </button>
   <div class="grow"></div>
   <img
-    class="w-1/4 mr-3"
+    class="w-2/5 overflow-visible"
     src="/logo.svg"
     routerLink="/"
     alt="knuffelbus logo"
   />
-</div>
-
-<!-- Overlay menu -->
-<div class="overlay" *ngIf="overlayOpen" (click)="closeOverlay()">
-  <div class="overlay-image"></div>
-  <div class="flex flex-col justify-center z-10 gap-4 px-3 py-20">
-    <h2 (click)="navigateTo('section1')" class="listItem">Home</h2>
-    <h2 (click)="navigateTo('section2')" class="listItem">Over ons</h2>
-    <h2 (click)="navigateTo('section3')" class="listItem">Onze dieren</h2>
-    <h2 (click)="navigateTo('section3')" class="listItem">Info</h2>
-    <h2 (click)="navigateTo('section4')" class="listItem">Contact</h2>
-  </div>
 </div>

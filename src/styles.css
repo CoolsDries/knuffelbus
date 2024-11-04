@@ -15,5 +15,9 @@
   @apply content-[attr(data-text-outline)] -z-10 absolute bottom-1 left-1 text-transparent;
 }
 
+.textwithheader {
+  @apply px-5 py-7;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
