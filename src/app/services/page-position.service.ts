@@ -18,7 +18,9 @@ export class PagePositionService {
   }
 
   returnToPreviousPosition() {
-    let previous = this.positions.pop();
+    // Check if previos position exists, otherwise send to home
+    let previous = this.positions.length? this.positions.pop() : { position: 0, routePath: "/" };
+    
     this.router.navigate([previous?.routePath]).then(() => {
       window.scrollTo({
         top: previous?.position,

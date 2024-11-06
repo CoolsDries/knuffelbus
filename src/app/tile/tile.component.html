@@ -1,10 +1,13 @@
-<div
-  class="relative overflow-hidden bg-orange rounded-md shadow-lg border border-orange-dark border-opacity-20 p-6 text-center"
->
+<div class="relative overflow-hidden text-center">
+  <!-- background color -->
+  <div
+    class="absolute bg-orange -z-20 w-full h-full rounded-md shadow-lg border border-orange-dark border-opacity-20"
+  ></div>
+
   <!-- background image -->
   <div
     *ngIf="side; else left"
-    class="absolute -bottom-10 -right-10 w-[60vw] h-[60vw]"
+    class="absolute -bottom-10 -right-10 w-[60vw] h-[60vw] -z-10"
   >
     <svg class="text-orange-dark -rotate-45 opacity-30 w-full h-full">
       <use [attr.xlink:href]="image" />
@@ -12,7 +15,7 @@
   </div>
 
   <ng-template #left>
-    <div class="absolute -bottom-10 -left-10 w-[60vw] h-[60vw]">
+    <div class="absolute -bottom-10 -left-10 w-[60vw] h-[60vw] -z-10">
       <svg class="text-orange-dark rotate-45 opacity-30 w-full h-full">
         <use [attr.xlink:href]="image" />
       </svg>

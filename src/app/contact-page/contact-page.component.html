@@ -1,9 +1,92 @@
 <div class="bg-transparent absolute top-0 left-5 z-10">
-    <button
-      (click)="closeNavigation()"
-      class="font-medium text-5xl text-blue p-3"
-    >
-      x
-    </button>
-  </div>
+  <button
+    (click)="closeNavigation()"
+    class="font-medium text-5xl text-blue p-3"
+  >
+    x
+  </button>
+</div>
 
+<div class="container-titel-text mt-7">
+  <h1 class="section-title text-red">Neem Contact Op</h1>
+  <p>
+    Wil je meer weten over de Knuffelbus of wil je een afspraak maken? Vul het
+    formulier hieronder in, en we nemen zo snel mogelijk contact met je op.
+    Samen brengen we warmte en vreugde naar de mensen die het hardst een knuffel
+    kunnen gebruiken.
+  </p>
+</div>
+
+<div class="p-5">
+  <app-tile>
+    <form class="p-4">
+      <!-- Naam -->
+      <div>
+        <label for="name" class="block text-gray-700 font-semibold mb-2"
+          >Naam</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:border-orange-600"
+          placeholder="Je naam"
+          required
+        />
+      </div>
+  
+      <!-- E-mail -->
+      <div>
+        <label for="email" class="block text-gray-700 font-semibold mb-2"
+          >E-mail</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:border-orange-600"
+          placeholder="Je e-mailadres"
+          required
+        />
+      </div>
+  
+      <!-- Telefoonnummer -->
+      <div>
+        <label for="phone" class="block text-gray-700 font-semibold mb-2"
+          >Telefoonnummer</label
+        >
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:border-orange-600"
+          placeholder="Je telefoonnummer"
+        />
+      </div>
+  
+      <!-- Bericht -->
+      <div>
+        <label for="message" class="block text-gray-700 font-semibold mb-2"
+          >Bericht</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:border-orange-600"
+          rows="5"
+          placeholder="Schrijf je bericht hier..."
+        ></textarea>
+      </div>
+  
+      <!-- Verzenden Knop -->
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-red text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition"
+        >
+          Verstuur Bericht
+        </button>
+      </div>
+    </form>
+  </app-tile>
+</div>
