@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { PagePositionService } from '../services/page-position.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export class HeaderComponent {
   isNavigationRoute: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private pagePosition: PagePositionService) { }
 
   ngOnInit(): void {
     // Listen to router changes
@@ -25,6 +26,7 @@ export class HeaderComponent {
   }
 
   openNavigation() {
+      this.pagePosition.setPosition(window.scrollY, this.router.url)
       this.router.navigate(['/nav']);
   }
 

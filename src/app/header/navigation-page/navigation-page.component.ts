@@ -10,22 +10,17 @@ import { PagePositionService } from '../../services/page-position.service';
   styleUrl: './navigation-page.component.css'
 })
 export class NavigationPageComponent {
-  constructor(private router: Router, private pagePosition: PagePositionService) {}
+  constructor(private router: Router, private pagePosition: PagePositionService) { }
 
   closeNavigation() {
-    let previous = this.pagePosition.getPosition();
-    this.router.navigate([previous?.routePath]).then(() => {
-      window.scrollTo({
-        top: previous?.position,
-        left: 0,
-        behavior: "instant"
-      });
-    });
+    this.pagePosition.returnToPreviousPosition()
   }
 
-  navigateTo(sectionId: string) {
-    this.router.navigate(['/'], { fragment: sectionId }).then(() => {
-      this.closeNavigation();
+  navigateTo(route: string, sectionId: string) {
+    this.router.navigate(['/' + route]).then(() => {
+      if (sectionId) {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "instant" })
+      }
     });
   }
 }

@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { BackgroundPatternComponent } from '../background-pattern/background-pattern.component';
 import { AnimalSliderComponent } from '../animal-slider/animal-slider.component';
 import { TileComponent } from '../tile/tile.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, BackgroundPatternComponent, AnimalSliderComponent, TileComponent],
+  imports: [CommonModule, HeaderComponent, BackgroundPatternComponent, AnimalSliderComponent, TileComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -22,7 +23,7 @@ export class HomeComponent {
   ];
 
   // Holds  index of active svg
-  activeIndex: number = -1; 
+  activeIndex: number = -1;
   private animationInterval: any;
 
   ngOnInit() {
@@ -37,7 +38,7 @@ export class HomeComponent {
     this.animationInterval = setInterval(() => {
       // Reset de actieve animatie-index en kies een nieuwe willekeurige SVG
       this.activeIndex = Math.floor(Math.random() * this.backgroundImages.length);
-      
+
       // Verwijder de animatie na een korte duur
       setTimeout(() => {
         this.activeIndex = -1;
