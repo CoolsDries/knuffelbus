@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center">
-  <div class="flex flex-row justify-center w-screen">
-    <button (click)="previous()" class="text-2xl text-orange-dark">
+  <div class="flex flex-row justify-center w-screen xl:w-2/3">
+    <button (click)="previous()" class="text-2xl text-orange-dark xl:text-4xl">
       &#10229;
     </button>
 
@@ -10,6 +10,6 @@
       [animal]="animals[currentIndex]"
     ></app-animal-slider-item>
 
-    <button (click)="next()" class="text-2xl text-orange-dark">&#10230;</button>
+    <button (click)="next()" class="text-2xl text-orange-dark xl:text-4xl">&#10230;</button>
   </div>
 </div>

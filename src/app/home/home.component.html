@@ -3,25 +3,27 @@
   <app-header></app-header>
 </div>
 
-<div class="pt-16">
+<div class="pt-16 xl:pt-32">
   <!-- Intro -->
-  <div class="container-titel-text">
-    <h1 class="section-title text-red">Welkom bij<br />de Knuffelbus</h1>
-    <p>
-      Wij brengen knuffelbare, getrainde dieren rechtstreeks naar
-      woonzorgcentra, waar ouders de kans krijgen om even te ontsnappen aan de
-      dagelijkse sleur en volop te genieten van liefdevolle interacties met
-      dieren. Dit is niet zomaar een activiteit - het is een kans om ouderen een
-      boost in welzijn te geven
-    </p>
-    <div class="flex justify-center my-5 overflow-y-visible">
-      <img src="real_images/oma_1.jpg" alt="" class="max-w-[120vw]" />
+  <div class="container-titel-text xl:flex xl:flex-row-reverse xl:gap-10">
+    <div>
+      <h1 class="section-title text-red">Welkom bij<br />de Knuffelbus</h1>
+      <p>
+        Wij brengen knuffelbare, getrainde dieren rechtstreeks naar
+        woonzorgcentra, waar ouders de kans krijgen om even te ontsnappen aan de
+        dagelijkse sleur en volop te genieten van liefdevolle interacties met
+        dieren. Dit is niet zomaar een activiteit - het is een kans om ouderen
+        een boost in welzijn te geven
+      </p>
+    </div>
+    <div class="flex justify-center my-5 overflow-hidden xl:w-full xl:h-2/3">
+      <img src="real_images/oma_1.jpg" alt="" class="" />
     </div>
   </div>
 
   <!-- Animal slider -->
   <div class="container-titel-text">
-    <h1 class="section-title text-red !-mb-8 text-right">Onze knuffelaars</h1>
+    <h1 class="section-title text-red !-mb-8 text-center">Onze knuffelaars</h1>
     <app-animal-slider></app-animal-slider>
   </div>
 
@@ -29,7 +31,7 @@
   <div class="py-6">
     <app-background-pattern>
       <h1
-        class="text-with-outline text-blue text-4xl mx-5 my-10"
+        class="text-with-outline text-blue text-4xl mx-5 my-10 xl:mx-10 xl:my-16"
         data-text-outline="De knuffelbus komt eraan!!"
       >
         De <br />knuffelbus <br />komt eraan!!
@@ -38,28 +40,31 @@
   </div>
 
   <!-- The story -->
-  <div class="container-titel-text">
-    <h1 class="section-title text-red">Het verhaal<br />van de Knuffelbus</h1>
-    <p>
-      De missie van de Knuffelbus is om geluksmomenten te creëren voor ouderen,
-      vooral diegenen die zich eenzaam voelen. Door getrainde, knuffelbare
-      dieren naar woonzorgcentra te brengen, streven we ernaar ouderen een
-      waardevolle afleiding te bieden en hun emotioneel welzijn te versterken.
-      Elke sessie is gericht op het bieden van troost, het doorbreken van
-      isolatie, en het stimuleren van warmte en vreugde. We geloven dat het
-      eenvoudige plezier van een knuffel met een dier kan bijdragen aan een
-      gezonder en gelukkiger leven, vooral voor hen die het hardst nodig hebben.
-    </p>
-    <div class="flex justify-center my-5 overflow-y-visible">
-      <img src="real_images/oma_2.jpg" alt="" class="max-w-[120vw]" />
+  <div class="container-titel-text xl:flex xl:flex-row xl:gap-10">
+    <div>
+      <h1 class="section-title text-red">Het verhaal<br />van de Knuffelbus</h1>
+      <p>
+        De missie van de Knuffelbus is om geluksmomenten te creëren voor
+        ouderen, vooral diegenen die zich eenzaam voelen. Door getrainde,
+        knuffelbare dieren naar woonzorgcentra te brengen, streven we ernaar
+        ouderen een waardevolle afleiding te bieden en hun emotioneel welzijn te
+        versterken. Elke sessie is gericht op het bieden van troost, het
+        doorbreken van isolatie, en het stimuleren van warmte en vreugde. We
+        geloven dat het eenvoudige plezier van een knuffel met een dier kan
+        bijdragen aan een gezonder en gelukkiger leven, vooral voor hen die het
+        hardst nodig hebben.
+      </p>
+    </div>
+    <div class="flex justify-center my-5 overflow-y-visible xl:w-full xl:h-2/3">
+      <img src="real_images/oma_2.jpg" alt="" class="" />
     </div>
   </div>
 
   <!-- De pakketten -->
-  <div>
-    <div class="container-titel-text">
+  <div class="xl:flex xl:flex-row xl:gap-10">
+    <div class="container-titel-text xl:w-2/5 xl:pt-0">
       <h1 class="section-title text-red">Onze Pakketten</h1>
-      <p>
+      <p class="xl:w-full">
         De Knuffelbus biedt verschillende pakketten om ouderen de troost van een
         knuffelbare vriend te brengen. Elk bezoek biedt waardevolle
         geluksmomenten en draagt bij aan het emotioneel welzijn van onze
@@ -67,13 +72,13 @@
       </p>
     </div>
 
-    <div class="flex flex-col gap-5 mx-5 mb-6">
+    <div class="flex flex-col gap-5 mx-5 mb-6 xl:w-3/5">
       <!-- Basisbezoek Pakket -->
       <app-tile>
-        <h3 class="section-title text-blue">Basis pakket</h3>
-        <p>Eenmalig bezoek van 3 uur</p>
+        <h3 class="section-title">Basis pakket</h3>
+        <p class="xl:w-full">Eenmalig bezoek van 3 uur</p>
         <div class="section-title text-red">€450</div>
-        <p class="text-gray mb-6">
+        <p class="text-gray mb-6 xl:w-full">
           Inclusief interactie met onze getrainde dieren voor troost en
           gezelschap.
         </p>
@@ -82,9 +87,9 @@
       <!-- 5 Sessies Pakket -->
       <app-tile>
         <h3 class="section-title">5 Sessies Pakket</h3>
-        <p>Vijf basisbezoeken</p>
+        <p class="xl:w-full">Vijf basisbezoeken</p>
         <div class="section-title text-red">€2000</div>
-        <p>
+        <p class="text-gray mb-6 xl:w-full">
           Geniet van 5 sessies, waarbij ouderen extra ondersteuning en vreugde
           ontvangen.
         </p>
@@ -93,9 +98,9 @@
       <!-- 10 Sessies Pakket -->
       <app-tile>
         <h3 class="section-title">10 Sessies Pakket</h3>
-        <p>Tien basisbezoeken</p>
+        <p class="xl:w-full">Tien basisbezoeken</p>
         <div class="section-title text-red">€3750</div>
-        <p>
+        <p class="text-gray mb-6 xl:w-full">
           Ontvang 10 sessies voor een langdurige impact en regelmatige
           knuffelmomenten.
         </p>

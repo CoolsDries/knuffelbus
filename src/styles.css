@@ -6,16 +6,19 @@
 @tailwind utilities;
 
 .section-title {
-  @apply font-titel text-xl mb-6 mt-6
+  @apply font-titel text-xl mb-6 mt-6;
+  @apply xl:text-3xl
 }
 
 p {
-  @apply font-sans text-sm leading-4
+  @apply font-sans text-sm leading-4;
+  @apply xl:text-base xl:w-2/3
 }
 
 .text-with-outline {
   /* Add margin same size as offset of outline */
   @apply relative font-titel p-0.5;
+  @apply xl:text-8xl
 }
 
 .text-with-outline::after {
@@ -25,4 +28,5 @@ p {
 
 .container-titel-text {
   @apply px-5 py-6;
+  @apply xl:px-10 xl:py-12
 }

@@ -1,13 +1,13 @@
-<div class="bg-yellow flex flex-row px-5 py-2">
+<div class="bg-yellow flex flex-row px-5 py-2 xl:px-10 xl:py-4">
   <button
     (click)="openNavigation()"
-    class="font-medium text-4xl text-blue"
+    class="font-medium text-4xl text-blue xl:text-6xl"
   >
-  {{ isNavigationRoute ? "x" : "&equiv;" }}
+    {{ isNavigationRoute ? "x" : "&equiv;" }}
   </button>
   <div class="grow"></div>
   <img
-    class="w-2/6 overflow-visible"
+    class="w-2/6 overflow-visible xl:w-1/6"
     src="/logo.svg"
     routerLink="/"
     alt="knuffelbus logo"
