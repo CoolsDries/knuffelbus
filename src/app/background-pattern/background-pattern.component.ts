@@ -25,6 +25,9 @@ export class BackgroundPatternComponent {
   // height and width of images
   tileSize: number = 0;
 
+  // Images in pattern
+  patternDensity: number = 20
+
   // matrix that holds the images
   rows: any[] = [];
 
@@ -85,7 +88,7 @@ export class BackgroundPatternComponent {
         }, 2000); // animation duration
       }
 
-    }, 3000); // interval time
+    }, 2000); // interval time
 
 
   }
@@ -99,14 +102,16 @@ export class BackgroundPatternComponent {
       this.containerWidth = container.width;
       this.containerHeight = container.height;
       // TODO: add calculation to define tile size
-      this.tileSize = 50;
+      let surface = this.containerHeight * this.containerWidth
+      let imageSurface = surface/this.patternDensity;
+      this.tileSize = Math.sqrt(imageSurface);
     }
 
   }
 
   private generatePattern(): void {
     // Tiles needed for 1 row + 1 extra due to shift
-    const tilesPerRow = Math.ceil(this.containerWidth / this.tileSize) + 1;
+    const tilesPerRow = Math.ceil(this.containerWidth / this.tileSize);
     // rows needed to file container
     const rowCount = Math.ceil(this.containerHeight / this.tileSize);
 
