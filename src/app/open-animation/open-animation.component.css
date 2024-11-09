@@ -1,0 +1,114 @@
+@keyframes orange-move-in {
+  50% {
+    left: 42%;
+  }
+  70% {
+    left: 42%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes orange-rotate {
+  0% {
+    rotate: 0deg;
+  }
+  99% {
+    rotate: 3600deg;
+    @apply text-red;
+  }
+  100% {
+    rotate: 3600deg;
+    @apply text-red hidden;
+  }
+}
+
+.orange {
+  @apply text-orange-dark absolute w-[50%] aspect-square;
+  @apply -ml-[25%] -mt-[25%] top-1/2 -left-1/2 z-20;
+  animation-name: orange-move-in, orange-rotate;
+  animation-duration: 2s, 1.5s;
+  animation-timing-function: ease-out, ease-in;
+  animation-delay: 0s, 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes red-move-in {
+  50% {
+    right: 42%;
+  }
+  70% {
+    right: 42%;
+  }
+  100% {
+    right: 50%;
+  }
+}
+
+@keyframes red-rotate {
+  0% {
+    rotate: 0deg;
+  }
+  99% {
+    rotate: 3600deg;
+    @apply text-red;
+  }
+  100% {
+    rotate: 3600deg;
+    @apply text-red hidden;
+  }
+}
+
+.red {
+  @apply text-red absolute w-[50%] aspect-square;
+  @apply -mr-[25%] -mt-[25%] top-[51%] -right-1/2 z-20;
+  animation-name: red-move-in, red-rotate;
+  animation-duration: 2s, 1.5s;
+  animation-timing-function: ease-out, ease-in;
+  animation-delay: 0s, 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes circle-enlarge {
+  100% {
+    @apply w-[300%] -ml-[150%] -mt-[150%] left-1/2;
+  }
+}
+
+@keyframes circle-top-left {
+  0% {
+  }
+  99% {
+    @apply left-3 top-20 w-0 ml-0 mt-0;
+  }
+  100% {
+    @apply left-3 top-20 w-0 ml-0 mt-0 hidden;
+  }
+}
+
+.circle {
+  @apply w-0 aspect-square bg-red rounded-full absolute left-1/2 top-1/2 z-10;
+  animation-name: circle-enlarge, circle-top-left;
+  animation-duration: 1s, 0.5s;
+  animation-timing-function: ease-in, ease-out;
+  animation-delay: 2.5s, 3.5s;
+  animation-fill-mode: forwards, forwards;
+}
+
+@keyframes disapear {
+    100% {
+      @apply bg-transparent;
+    }
+  }
+
+.background{
+    @apply w-full h-full bg-yellow relative overflow-hidden;
+    animation-name: disapear;
+    animation-duration: 0.1;
+    animation-timing-function: ease-in;
+    animation-delay: 3.5s;
+    animation-fill-mode: forwards;
+}
