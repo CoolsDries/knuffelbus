@@ -21,7 +21,7 @@
 }
 
 .circle-animation {
-  @apply w-0 aspect-square bg-red rounded-full absolute left-1/2 top-1/2 z-50;
+  @apply w-0 aspect-square bg-red rounded-full absolute left-1/2 top-1/2;
   animation-name: circle-enlarge;
   animation-duration: 0.5s;
   animation-timing-function: ease-in;

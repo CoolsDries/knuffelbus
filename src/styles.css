@@ -17,7 +17,7 @@ p {
 
 .text-with-outline {
   /* Add margin same size as offset of outline */
-  @apply relative inline-block font-bowlby_one;
+  @apply relative inline-block;
   @apply xl:text-8xl;
 }
 
