@@ -7,7 +7,7 @@ module.exports = {
         sans: ["nunito", "ui-sans-serif", "system-ui"],
         serif: ["ui-serif", "Georgia"],
         mono: ["ui-monospace", "SFMono-Regular"],
-        titel: ["bowlby one"],
+        bowlby_one: ["bowlby one"],
         truculenta: ["truculenta"]
       },
       colors: {

@@ -1,12 +1,14 @@
 <!-- Header -->
 <app-header class="fixed w-full h-10%"></app-header>
 
-<div class="pt-16 xl:pt-32">
+<div class="overflow-auto h-screen snap-mandatory snap-y">
   <!-- Intro -->
-  <div class="container-titel-text xl:flex xl:flex-row-reverse xl:gap-10">
+  <div
+    class="scroll-section container-titel-text flex flex-col items-center gap-10 xl:flex-row-reverse"
+  >
     <div>
-      <h1 class="section-title text-red">Welkom bij<br />de Knuffelbus</h1>
-      <p>
+      <h1 class="section-title">Welkom,<br />onze eerste stop!</h1>
+      <p class="w-2/3">
         Wij brengen knuffelbare, getrainde dieren rechtstreeks naar
         woonzorgcentra, waar ouders de kans krijgen om even te ontsnappen aan de
         dagelijkse sleur en volop te genieten van liefdevolle interacties met
@@ -14,19 +16,30 @@
         een boost in welzijn te geven
       </p>
     </div>
-    <div class="flex justify-center my-5 overflow-hidden xl:w-full xl:h-2/3">
-      <img src="real_images/oma_1.jpg" alt="" class="" />
+    <div
+      class="overflow-hidden w-screen grow flex flex-col place-content-center xl:w-full xl:h-2/3"
+      [ngStyle]="{
+        'mask-image': 'url(image_masks/mask_hond_groot.svg)',
+        'mask-size': '100vw',
+        'mask-repeat': 'no-repeat'
+      }"
+    >
+      <img src="real_images/oma_1.jpg" alt="" class="w-screen" />
     </div>
   </div>
 
   <!-- Animal slider -->
-  <div class="container-titel-text" id="Knuffelaars">
-    <h1 class="section-title text-red !-mb-8 text-center">Onze knuffelaars</h1>
-    <app-animal-slider></app-animal-slider>
+  <div class="scroll-section" id="Knuffelaars">
+    <app-background-pattern>
+      <div class="container-titel-text w-screen">
+        <h1 class="section-title">Onze<br />knuffelaars</h1>
+        <app-animal-slider></app-animal-slider>
+      </div>
+    </app-background-pattern>
   </div>
 
   <!-- Slogan with background -->
-  <div class="py-6">
+  <!-- <div class="scroll-section py-6">
     <app-background-pattern>
       <h1
         class="text-with-outline text-blue text-4xl mx-5 my-10 xl:mx-10 xl:my-16"
@@ -35,10 +48,13 @@
         De <br />knuffelbus <br />komt eraan!!
       </h1>
     </app-background-pattern>
-  </div>
+  </div> -->
 
   <!-- The story -->
-  <div class="container-titel-text xl:flex xl:flex-row xl:gap-10" id="Verhaal">
+  <div
+  class="scroll-section container-titel-text flex flex-col items-center gap-10 xl:flex-row-reverse"
+    id="Verhaal"
+  >
     <div>
       <h1 class="section-title text-red">Het verhaal<br />van de Knuffelbus</h1>
       <p>
@@ -53,13 +69,20 @@
         hardst nodig hebben.
       </p>
     </div>
-    <div class="flex justify-center my-5 overflow-y-visible xl:w-full xl:h-2/3">
-      <img src="real_images/oma_2.jpg" alt="" class="" />
+    <div
+      class="overflow-hidden w-screen grow flex flex-col place-content-center xl:w-full xl:h-2/3"
+      [ngStyle]="{
+        'mask-image': 'url(image_masks/mask_hond_groot.svg)',
+        'mask-size': '100vw',
+        'mask-repeat': 'no-repeat'
+      }"
+    >
+    <img src="real_images/oma_2.jpg" alt="" class="" />
     </div>
   </div>
 
   <!-- De pakketten -->
-  <div class="xl:flex xl:flex-row xl:gap-10" id="Pakketten">
+  <div class="scroll-section xl:flex xl:flex-row xl:gap-10" id="Pakketten">
     <div class="container-titel-text xl:w-2/5 xl:pt-0">
       <h1 class="section-title text-red">Onze Pakketten</h1>
       <p class="xl:w-full">

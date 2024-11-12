@@ -6,28 +6,27 @@
 @tailwind utilities;
 
 .section-title {
-  @apply font-titel text-xl mb-6 mt-6;
-  @apply xl:text-3xl
+  @apply font-truculenta font-black text-5xl mb-8 indent-12 text-red;
+  @apply xl:text-3xl;
 }
 
 p {
-  @apply font-sans text-sm leading-4;
-  @apply xl:text-base xl:w-2/3
+  @apply font-truculenta font-light text-base leading-4;
+  @apply xl:text-base xl:w-2/3;
 }
-
 
 .text-with-outline {
   /* Add margin same size as offset of outline */
-  @apply relative font-titel p-0.5;
-  @apply xl:text-8xl
+  @apply relative inline-block font-bowlby_one;
+  @apply xl:text-8xl;
 }
 
 .text-with-outline::after {
   -webkit-text-stroke: 1px white;
-  @apply content-[attr(data-text-outline)] -z-10 absolute bottom-1 left-1 text-transparent;
+  @apply content-[attr(data-text-outline)] -z-10 absolute top-0 left-0 translate-x-0.5 -translate-y-0.5 text-transparent;
 }
 
 .container-titel-text {
-  @apply px-5 py-6;
-  @apply xl:px-10 xl:py-12
+  @apply px-5 pt-6;
+  @apply xl:px-10 xl:py-12;
 }

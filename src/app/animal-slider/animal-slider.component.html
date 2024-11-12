@@ -1,15 +1,22 @@
 <div class="flex flex-col items-center">
-  <div class="flex flex-row justify-center w-screen xl:w-2/3">
-    <button (click)="previous()" class="text-2xl text-orange-dark xl:text-4xl">
-      &#10229;
-    </button>
+  <div class="flex place-items-center w-screen xl:w-2/3">
+    <div class="absolute w-full flex flex-row px-5">
+      <button
+        (click)="previous()"
+        class="text-2xl text-orange-dark xl:text-4xl"
+      >
+        &#10229;
+      </button>
+      <div class="grow"></div>
+      <button (click)="next()" class="text-2xl text-orange-dark xl:text-4xl">
+        &#10230;
+      </button>
+    </div>
 
     <app-animal-slider-item
-      class="w-1/2 mx-10"
+      class=""
       *ngIf="animals.length"
       [animal]="animals[currentIndex]"
     ></app-animal-slider-item>
-
-    <button (click)="next()" class="text-2xl text-orange-dark xl:text-4xl">&#10230;</button>
   </div>
 </div>

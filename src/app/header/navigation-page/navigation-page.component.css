@@ -1,5 +1,5 @@
 .listItem {
-    @apply text-center font-titel text-orange-dark;
+    @apply text-center font-bowlby_one text-orange-dark;
     @apply xl:text-4xl
 }
 

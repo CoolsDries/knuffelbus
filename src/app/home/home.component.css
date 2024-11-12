@@ -1,26 +1,4 @@
-.test {
-  @apply w-[200px] h-[200px] bg-black relative;
+.scroll-section {
+  @apply h-screen w-full snap-start
 }
 
-.test::after {
-  background-image: url(/lineart/logo_background.svg);
-  @apply bg-white absolute w-full h-full
-}
-
-/* Animation classes */
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-rotate {
-  animation: rotate 1.5s ease-in-out;
-}
-
-svg {
-  color: green;
-}

@@ -26,7 +26,7 @@ export class BackgroundPatternComponent {
   tileSize: number = 0;
 
   // Images in pattern
-  patternDensity: number = 20
+  patternDensity: number = 30
 
   // matrix that holds the images
   rows: any[] = [];
@@ -56,6 +56,8 @@ export class BackgroundPatternComponent {
       // Start animation interval with new elements
       this.startAnimationInterval(c.map((t: any) => t.nativeElement));
     });
+    // Start animtion with current elements
+    this.startAnimationInterval(this.tileElements.map((t: any) => t.nativeElement));
   }
 
   ngOnDestroy() {
@@ -71,6 +73,7 @@ export class BackgroundPatternComponent {
 
   // Start animations with given HTML elements
   startAnimationInterval(tileArray: HTMLElement[]) {
+    console.log("start animation")
     const length = tileArray.length;
 
     this.animationInterval = setInterval(() => {
@@ -80,6 +83,7 @@ export class BackgroundPatternComponent {
 
       if (tile) {
         // give element animation css class
+        console.log("rotate: " + tile)
         this.renderer.addClass(tile, "animate-rotate");
 
         setTimeout(() => {
@@ -112,8 +116,10 @@ export class BackgroundPatternComponent {
   private generatePattern(): void {
     // Tiles needed for 1 row + 1 extra due to shift
     const tilesPerRow = Math.ceil(this.containerWidth / this.tileSize);
+    console.log("columns: " + tilesPerRow)
     // rows needed to file container
     const rowCount = Math.ceil(this.containerHeight / this.tileSize);
+    console.log("rows: " + rowCount)
 
     // Fill first row with images
     let row = [];
