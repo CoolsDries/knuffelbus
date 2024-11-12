@@ -15,6 +15,7 @@ p {
   @apply xl:text-base xl:w-2/3
 }
 
+
 .text-with-outline {
   /* Add margin same size as offset of outline */
   @apply relative font-titel p-0.5;

@@ -52,6 +52,7 @@
     rotate: 0deg;
   }
   99% {
+    top: 50%;
     rotate: 3600deg;
     @apply text-red;
   }
@@ -82,10 +83,10 @@
   0% {
   }
   99% {
-    @apply left-3 top-20 w-0 ml-0 mt-0;
+    @apply left-6 top-5 w-0 ml-0 mt-0;
   }
   100% {
-    @apply left-3 top-20 w-0 ml-0 mt-0 hidden;
+    @apply left-6 top-5 w-0 ml-0 mt-0 hidden;
   }
 }
 
@@ -98,17 +99,22 @@
   animation-fill-mode: forwards, forwards;
 }
 
-@keyframes disapear {
-    100% {
-      @apply bg-transparent;
-    }
+@keyframes hide {
+  100% {
+    @apply bg-transparent;
   }
+}
+@keyframes disable {
+  100% {
+    @apply hidden;
+  }
+}
 
-.background{
-    @apply w-full h-full bg-yellow relative overflow-hidden;
-    animation-name: disapear;
-    animation-duration: 0.1;
-    animation-timing-function: ease-in;
-    animation-delay: 3.5s;
-    animation-fill-mode: forwards;
+.background {
+  @apply w-full h-full bg-yellow relative overflow-hidden;
+  animation-name: hide, disable;
+  animation-duration: 0.01, 0.01;
+  animation-timing-function: ease-in;
+  animation-delay: 3.5s, 4s;
+  animation-fill-mode: forwards, forwards;
 }

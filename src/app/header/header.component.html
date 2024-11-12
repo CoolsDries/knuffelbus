@@ -1,15 +1,18 @@
-<div class="bg-yellow flex flex-row px-5 py-2 xl:px-10 xl:py-4">
-  <button
-    (click)="openNavigation()"
-    class="font-medium text-4xl text-blue xl:text-6xl"
+<div class="w-[10%] aspect-square pt-3 pl-3">
+  <div
+    #hamburgerMenu
+    (click)="openNavigation(hamburgerMenu, circle)"
+    class="text-red relative -ml-[5%] left-[5%]"
   >
-    {{ isNavigationRoute ? "x" : "&equiv;" }}
-  </button>
-  <div class="grow"></div>
-  <img
-    class="w-2/6 overflow-visible xl:w-1/6"
-    src="/logo.svg"
-    routerLink="/"
-    alt="knuffelbus logo"
-  />
+    <div #circle></div>
+    <svg
+      viewBox="0 0 353.18 270.57"
+      class="w-full block m-auto absolute -top-0.5 left-0.5 stroke-white stroke-[6] text-transparent"
+    >
+      <use xlink:href="lineart/hambuger_menu_icon.svg#id" />
+    </svg>
+    <svg viewBox="0 0 353.18 270.57" class="w-full block m-auto absolute">
+      <use xlink:href="lineart/hambuger_menu_icon.svg#id" />
+    </svg>
+  </div>
 </div>

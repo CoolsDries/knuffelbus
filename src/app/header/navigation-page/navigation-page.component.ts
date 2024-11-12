@@ -12,7 +12,7 @@ import { PagePositionService } from '../../services/page-position.service';
 export class NavigationPageComponent {
   constructor(private router: Router, private pagePosition: PagePositionService) { }
 
-  closeNavigation() {
+  closeNavigation(hamburger: HTMLElement, circle: HTMLElement) {
     this.pagePosition.returnToPreviousPosition()
   }
 

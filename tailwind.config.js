@@ -8,6 +8,7 @@ module.exports = {
         serif: ["ui-serif", "Georgia"],
         mono: ["ui-monospace", "SFMono-Regular"],
         titel: ["bowlby one"],
+        truculenta: ["truculenta"]
       },
       colors: {
         yellow: "#E7E19E",
