@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './open-animation.component.css'
 })
 export class OpenAnimationComponent {
-
+  
 }

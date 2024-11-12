@@ -99,20 +99,21 @@
   animation-fill-mode: forwards, forwards;
 }
 
-@keyframes hide {
+@keyframes transparent {
   100% {
     @apply bg-transparent;
   }
 }
-@keyframes disable {
+
+@keyframes hidden {
   100% {
     @apply hidden;
   }
 }
 
 .background {
-  @apply w-full h-full bg-yellow relative overflow-hidden;
-  animation-name: hide, disable;
+  @apply w-full h-full bg-yellow overflow-hidden absolute z-50;
+  animation-name: transparent, hidden;
   animation-duration: 0.01, 0.01;
   animation-timing-function: ease-in;
   animation-delay: 3.5s, 4s;
