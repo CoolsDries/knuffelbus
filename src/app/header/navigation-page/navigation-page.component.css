@@ -1,6 +1,5 @@
 .listItem {
     @apply text-center font-bowlby_one text-orange-dark;
-    @apply xl:text-4xl
 }
 
 .overlay {
@@ -13,7 +12,7 @@
     mask-position: center;
     mask-size: 150%;
     @apply bg-orange opacity-30 rotate-90 absolute w-[100vh] h-[100vw] overflow-visible;
-    @apply xl:rotate-0 xl:w-full
+    @apply md:rotate-0 md:w-full
 }
 
 @keyframes open {
