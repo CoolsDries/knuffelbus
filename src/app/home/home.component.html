@@ -4,7 +4,7 @@
 <div class="overflow-auto h-screen snap-mandatory snap-y">
   <!-- Intro -->
   <div
-    class="scroll-section container-titel-text flex flex-col items-center gap-10 xl:flex-row-reverse"
+    class="scroll-section container-titel-text flex flex-col items-center gap-10 md:flex-row-reverse md:gap-5"
   >
     <div>
       <h1 class="section-title">Welkom,<br />onze eerste stop!</h1>
@@ -17,45 +17,36 @@
       </p>
     </div>
     <div
-      class="overflow-hidden w-screen grow flex flex-col place-content-center xl:w-full xl:h-2/3"
       [ngStyle]="{
-        'mask-image': 'url(image_masks/mask_hond_groot.svg)',
-        'mask-size': '100vw',
-        'mask-repeat': 'no-repeat'
+        maskImage: 'url(image_masks/mask_hond_groot.svg)',
+        maskRepeat: 'no-repeat'
       }"
+      class="section-image"
     >
       <img src="real_images/oma_1.jpg" alt="" class="w-screen" />
     </div>
   </div>
 
   <!-- Animal slider -->
-  <div class="scroll-section" id="Knuffelaars">
-    <app-background-pattern>
-      <div class="container-titel-text w-screen">
-        <h1 class="section-title text-with-outline" data-text-outline="Onze&#10;&#13;knuffelaars">Onze<br />knuffelaars</h1>
-        <app-animal-slider></app-animal-slider>
-      </div>
-    </app-background-pattern>
-  </div>
-
-  <!-- Slogan with background -->
-  <!-- <div class="scroll-section py-6">
-    <app-background-pattern>
+  <div class="scroll-section relative" id="Knuffelaars">
+    <app-background-pattern></app-background-pattern>
+    <div class="container-titel-text w-screen">
       <h1
-        class="text-with-outline text-blue text-4xl mx-5 my-10 xl:mx-10 xl:my-16"
-        data-text-outline="De knuffelbus komt eraan!!"
+        class="section-title text-with-outline"
+        data-text-outline="Onze&#10;&#13;knuffelaars"
       >
-        De <br />knuffelbus <br />komt eraan!!
+        Onze<br />knuffelaars
       </h1>
-    </app-background-pattern>
-  </div> -->
+      <app-animal-slider></app-animal-slider>
+    </div>
+  </div>
 
   <!-- The story -->
   <div
-  class="scroll-section container-titel-text flex flex-col items-center gap-10 xl:flex-row-reverse"
+    class="scroll-section container-titel-text flex flex-col items-center gap-10 md:flex-row-reverse md:gap-5"
     id="Verhaal"
   >
-    <div>
+    <div class="md:w-4/5 xl:w-2/3">
       <h1 class="section-title text-red">Het verhaal<br />van de Knuffelbus</h1>
       <p class="w-full">
         De missie van de Knuffelbus is om geluksmomenten te creëren voor
@@ -70,22 +61,21 @@
       </p>
     </div>
     <div
-      class="overflow-hidden w-screen grow flex flex-col place-content-center xl:w-full xl:h-2/3"
       [ngStyle]="{
         'mask-image': 'url(image_masks/mask_hond_groot.svg)',
-        'mask-size': '100vw',
         'mask-repeat': 'no-repeat'
       }"
+      class="section-image"
     >
-    <img src="real_images/oma_2.jpg" alt="" class="" />
+      <img src="real_images/oma_2.jpg" alt="" class="" />
     </div>
   </div>
 
   <!-- De pakketten -->
-  <div class="scroll-section xl:flex xl:flex-row xl:gap-10" id="Pakketten">
-    <div class="container-titel-text xl:w-2/5 xl:pt-0">
+  <div class="scroll-section lg:flex lg:flex-col lg:justify-center" id="Pakketten">
+    <div class="container-titel-text lg:w-2/3">
       <h1 class="section-title text-red">Onze Pakketten</h1>
-      <p class="xl:w-full">
+      <p class="">
         De Knuffelbus biedt verschillende pakketten om ouderen de troost van een
         knuffelbare vriend te brengen. Elk bezoek biedt waardevolle
         geluksmomenten en draagt bij aan het emotioneel welzijn van onze
@@ -93,13 +83,14 @@
       </p>
     </div>
 
-    <div class="flex flex-col gap-5 mx-5 mb-6 xl:w-3/5">
+    <div class="flex flex-col gap-5 mx-5 mt-6
+    lg:flex-row lg:flex">
       <!-- Basisbezoek Pakket -->
       <app-tile>
-        <h3 class="section-title">Basis pakket</h3>
-        <p class="xl:w-full">Eenmalig bezoek van 3 uur</p>
-        <div class="section-title text-red">€450</div>
-        <p class="text-gray mb-6 xl:w-full">
+        <h3 class="tile-title">Basis pakket</h3>
+        <p>Eenmalig bezoek van 3 uur</p>
+        <p class="tile-prize text-red">€450</p>
+        <p>
           Inclusief interactie met onze getrainde dieren voor troost en
           gezelschap.
         </p>
@@ -107,10 +98,10 @@
 
       <!-- 5 Sessies Pakket -->
       <app-tile>
-        <h3 class="section-title">5 Sessies Pakket</h3>
-        <p class="xl:w-full">Vijf basisbezoeken</p>
-        <div class="section-title text-red">€2000</div>
-        <p class="text-gray mb-6 xl:w-full">
+        <h3 class="tile-title">5 Sessies Pakket</h3>
+        <p>Vijf basisbezoeken</p>
+        <p class="tile-prize text-red">€2000</p>
+        <p>
           Geniet van 5 sessies, waarbij ouderen extra ondersteuning en vreugde
           ontvangen.
         </p>
@@ -118,10 +109,10 @@
 
       <!-- 10 Sessies Pakket -->
       <app-tile>
-        <h3 class="section-title">10 Sessies Pakket</h3>
-        <p class="xl:w-full">Tien basisbezoeken</p>
-        <div class="section-title text-red">€3750</div>
-        <p class="text-gray mb-6 xl:w-full">
+        <h3 class="tile-title">10 Sessies Pakket</h3>
+        <p>Tien basisbezoeken</p>
+        <p class="tile-prize text-red">€3750</p>
+        <p>
           Ontvang 10 sessies voor een langdurige impact en regelmatige
           knuffelmomenten.
         </p>

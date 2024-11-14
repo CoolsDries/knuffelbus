@@ -6,19 +6,16 @@
 @tailwind utilities;
 
 .section-title {
-  @apply font-truculenta font-black text-5xl mb-8 indent-12 text-red;
-  @apply xl:text-3xl;
+  @apply font-truculenta font-black text-5xl mb-8 indent-16 text-red;
 }
 
 p {
   @apply font-truculenta font-light text-base leading-4;
-  @apply xl:text-base xl:w-2/3;
 }
 
 .text-with-outline {
   /* Add margin same size as offset of outline */
   @apply relative inline-block;
-  @apply xl:text-8xl;
 }
 
 .text-with-outline::after {
@@ -29,4 +26,12 @@ p {
 .container-titel-text {
   @apply px-5 pt-6;
   @apply xl:px-10 xl:py-12;
+}
+
+.tile-title {
+  @apply font-truculenta font-black text-3xl mb-2 text-red;
+}
+
+.tile-prize {
+  @apply font-truculenta font-black text-2xl my-4 text-blue;
 }
